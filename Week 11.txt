@@ -1,0 +1,56 @@
+1)
+Write a program that calculates and prints the value according to the given formula:
+Q = Square root of [(2 * C * D)/H]
+Following are the fixed values of C and H:
+C is 50. H is 30.
+D is the variable whose values should be input to your program in a comma-separated sequence.
+
+import math
+c=int(50)
+h=int(30)
+q=[]
+d=[int(c) for c in input().split(',')]
+for i in range(len(d)):
+    a=round(math.sqrt((int(2)*c*d[i])/h))
+    q.append(a)
+for i in range(len(q)):
+    if i==len(q)-1:
+        print(q[i],end='')
+    else:
+        print(q[i],end=',')
+
+2)
+Write a program that accepts a comma-separated sequence of words as input and prints the words in a comma-separated sequence after sorting them alphabetically.
+
+items=[x for x in input().split(',')]
+items.sort()
+print (','.join(items))
+
+3)
+Write a program, which will find all such numbers between m and n (both included) such that each digit of the number is an even number.
+
+Input Format:
+The first line contains value m and n separated by a comma.
+
+Output Format:
+The numbers obtained should be printed in a comma-separated sequence on a single line.
+
+Constraints:
+1000<=m<=9000
+1000<=n<=9000
+
+m,n=input().split(',')
+m=int(m)
+n=int(n)
+l=[]
+if m>=1000 and m<=9000:
+    if n>=1000 and n<=9000:
+        for i in range(m,n+1):
+            c=0
+            i=str(i)
+            for j in range(4):
+                if int(i[j])%2==0:
+                    c+=1
+                    if c==4:
+                        l.append(i)
+print(",".join(l))

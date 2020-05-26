@@ -1,0 +1,46 @@
+1)
+With a given list L of integers, write a program to print this list L after removing all duplicate values with original order preserved.
+
+l=map(int,input().split())
+a=[]
+for i in l:
+  if i not in a:
+    a.append(i)
+for i in a:
+  print(i,end=' ')
+
+
+2)
+A panagram is a sentence containing every 26 letters in the English alphabet. Given a string S, check if it is panagram or not.
+The quick brown fox jumps over lazy dog.
+
+S=input()
+A=['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', ' ']
+a=list(S.upper())
+n=(set(a))
+c=0
+for i in n:
+    for j in A:
+        if(i==j):
+            c+=1
+if(c==27):
+    print("YES",end="")
+else:
+    print("NO",end="")
+
+
+
+3)
+Given a string S of lowercase letters, remove consecutive vowels from S. After removing, the order of the list should be maintained.
+
+v='aeiou'
+s=input()
+n=len(s)
+i=0
+while(i<n):
+    print(s[i],end='')
+    if s[i] in v:
+        while(i<n and s[i] in v):
+            i+=1
+        continue
+    i+=1

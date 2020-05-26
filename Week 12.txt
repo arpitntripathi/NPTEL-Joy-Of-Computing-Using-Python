@@ -1,0 +1,31 @@
+1)
+Write a program that accepts sequence of lines as input and prints the lines after making all characters in the sentence capitalised.
+
+n=int(input())
+for i in range(n):
+    s=input()
+    if i==n-1:
+        print(s.upper(),end='')
+    else:
+        print(s.upper(),end='\n')
+
+
+2)
+Write a program that accepts a sentence and calculate the number of upper case letters and lower case letters.
+s=input()
+uc=0
+lc=0
+for i in range(len(s)):
+  if s[i].isupper():
+    uc+=1
+  elif s[i].islower():
+    lc+=1
+print(uc,lc,end='')
+
+
+3)
+Assuming that we have some email addresses in the "username@companyname.com" format, please write program to print the company name of a given email address. Both user names and company names are composed of letters only.
+
+email=input().split('@')
+s=email[1].split('.')
+print(s[0],end='')

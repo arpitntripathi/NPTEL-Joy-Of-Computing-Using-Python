@@ -1,0 +1,68 @@
+1)
+A Lower triangular matrix is a square matrix (where the number of rows and columns are equal)  where all the elements above the diagonal are zero.
+For example, the following is an upper triangular matrix with the number of rows and columns equal to 3.
+
+1 0 0
+4 5 0
+7 8 9
+
+n=int(input())
+l=[]
+for i in range(n):
+  for j in range(1):
+    temp=[int(g) for g in input().split()]
+    l.append(temp)
+for i in range(n):
+  for j in range(n):
+    if i<j:
+      if j==n-1:
+        print(0,end='')
+      else:
+        print(0,end=' ')
+    else:
+      if j==n-1:
+        print(l[i][j],end='')
+      else:
+        print(l[i][j],end=' ')
+  if i!=n-1:
+    print()
+
+
+
+2)
+Given a square matrix of N rows and columns, find out whether it is symmetric or not.
+
+def isSymmetric(mat, N): 
+    for i in range(N): 
+        for j in range(N): 
+            if (mat[i][j] != mat[j][i]): 
+                return False
+    return True
+   
+
+a = int(input())
+
+
+m = []
+for i in range(1,a+1):    
+    l = list(map(int, input ().split ()))
+    m.append(l)
+if (isSymmetric(m, a)): 
+    print("YES")
+else: 
+    print("NO")
+
+3)
+Given a matrix with N rows and M columns,
+ the task is to check if the matrix is a Binary Matrix. A binary matrix is a matrix in which all the elements are either 0 or 1.
+
+n,m=input().split()
+n,m=int(n),int(m)
+a=[input().split() for i in range(n)]
+s="YES"
+for i in range(n):
+  for j in range(m):
+    if(a[i][j]!='0'):
+        if(a[i][j]!='1'):
+            s="NO"
+print(s,end='')

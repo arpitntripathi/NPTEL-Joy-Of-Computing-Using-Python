@@ -1,0 +1,43 @@
+1)
+Arun is working in an office which is N blocks away from his house. He wants to minimize the time it takes him to go from his house to the office.
+He can either take the office cab or he can walk to the office.
+Arun's velocity is V1 m/s when he is walking. The cab moves with velocity V2 m/s but whenever he calls for the cab, it always starts from the office, covers N blocks, collects Arun and goes back to the office.
+The cab crosses a total distance of N meters when going from office to Arun's house and vice versa, whereas Arun covers a distance of 2–√∗N while walking.
+Help Arun to find whether he should walk or take a cab to minimize the time.
+
+import math as m
+N,V1,V2=input().split()
+N=int(N)
+V1=int(V1)
+V2=int(V2)
+t1=(m.sqrt(2)*N)/V1
+t2=(2*N)/V2
+if(t1<t2):
+    print('Walk',end='')
+else:
+    print('Cab',end='')
+
+2)
+Given a list A of N distinct integer numbers, you can sort the list by moving an element to the end of the list. Find the minimum number of moves required to sort the list using this method in ascending order.
+
+arr = [int(x) for x in input().split()]
+arr1 = sorted(arr)
+count = 0
+for i in range(len(arr)):
+    if arr[i] == arr1[count]:
+        count+=1
+print(len(arr)-count)
+
+
+
+3)
+A semiprime number is an integer which can be expressed as a product of two distinct primes. For example 15 = 3*5 is a semiprime number but 9 = 3*3 is not .
+Given an integer number N, find whether it can be expressed as a sum of two semi-primes or not (not necessarily distinct).
+
+li = [12, 16, 20, 21, 24, 25, 27, 28, 29, 30, 31, 32, 35, 36, 37, 39, 40, 41, 42, 43, 44, 45, 47, 48, 49, 50, 52, 53, 54, 55, 56, 57, 59, 60, 61, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200]
+
+N = int(input())
+if (N in li):
+    print('Yes')
+else:
+    print('No')

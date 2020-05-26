@@ -1,0 +1,39 @@
+1)
+You are provided with a number D containing only digits 0's and 1's. Your aim is to convert this number to have all the digits same.
+For that, you will change exactly one digit i.e. from 0 to 1 or from 1 to 0. If it is possible to make all digits equal (either all 0's or all 1's) by flipping exactly 1 digit then output "YES", else print "NO" (quotes for clarity).
+
+a=input()
+z=0;o=0
+for i in range(len(a)):
+  ch=a[i]
+  if(ch=='0'):
+    z=z+1
+  elif(ch=='1'):
+    o=o+1
+if((o==1) or (z==1)):
+  print('YES',end='')
+else:
+  print('NO',end='')
+
+2)
+Given a list of n-1 numbers ranging from 1 to n, your task is to find the missing number. There are no duplicates. 
+
+n=[int(c) for c in input().split()]
+n=sorted(n)
+for i in range(1,len(n)+2):
+    if i not in n:
+        print(i,end='')
+
+3)
+Given a list A of elements of length N, ranging from 1 to N. All elements may not be present in the array. If the element is not present then there will be -1 present in the array. Rearrange the array such that A[i] = i and if i is not present display -1 at that place.
+
+a=[int(c) for c in input().split()]
+a=sorted(a)
+m=[]
+for i in range(len(a)):
+    if i in a:
+        m.append(i)
+    else:
+        m.append(-1)
+for i in m:
+    print(i,end=' ')
